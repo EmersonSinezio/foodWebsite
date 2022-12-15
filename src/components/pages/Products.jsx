@@ -12,8 +12,8 @@ function Products() {
   //Função para fazer o menu e aparecer a mensagem
   function buy() {
     setBuying((buying = true));
+    setPrice(price - price);
     setTimeout(() => {
-      setPrice(price - price);
       setBuying((buying = false));
     }, 2000);
   }
@@ -56,9 +56,12 @@ function Products() {
             id="hamburger"
           />
           <div className="description">
+            <div>
             <h2>
-              Hamburger <span>R$ 30</span>
+              Hamburger
             </h2>
+            <p> R$ 30</p>
+            </div>
           </div>
         </div>
         <div className="items">
@@ -69,17 +72,24 @@ function Products() {
             id="Chinese"
           />
           <div className="description">
+            <div>
             <h2>
-              Comida Chinesa <span> R$ 35</span>
+              Comida Chinesa
             </h2>
+              <p> R$ 35</p>
+            </div>
+            
           </div>
         </div>
         <div className="items">
           <img src={FoodImage3} alt="Sushi" className="imagePrev" id="Sushi" />
           <div className="description">
+            <div>
             <h2>
-              Suchi <span> R$ 40</span>
+              Suchi
             </h2>
+            <p> R$ 40</p>
+            </div>
           </div>
         </div>
       </div>

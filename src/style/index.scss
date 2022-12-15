@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600;800&family=Rubik+Vinyl&display=swap');
 $colorTitle: #ccc;
 $colorBorder: #FFFC00;
 $colorBackground: #D9D9D9;
@@ -10,6 +10,7 @@ $colorRgb: linear-gradient(90deg, #fffc00 0%, #ffffff 100%);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 #root {
@@ -35,6 +36,7 @@ $colorRgb: linear-gradient(90deg, #fffc00 0%, #ffffff 100%);
 
 .headerTitle span {
     color: $colorBackground2;
+    font-family: 'Rubik Vinyl', cursive;
 }
 
 a {
@@ -72,7 +74,7 @@ a {
     height: 90vh;
 }
 
-.productMain,
+
 .imgFull {
     width: 60vw;
     height: 50vh;
@@ -88,8 +90,8 @@ a {
 }
 
 .items {
-    width: 300px;
-    height: 200px;
+    width: 20vw;
+    height: 20vh;
     background-color: $colorTitle ;
     border: 1px solid $colorBorder;
     margin: 3vh;
@@ -97,22 +99,24 @@ a {
 }
 
 .imagePrev {
-    width: 300px;
-    height: 200px;
+    width: 23vw;
+    height: 20vh;
     cursor: pointer;
 }
 
 .cart {
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
-    height: 90vh;
-    background-color: rgba($color: $colorBorder, $alpha: .2);
+    height: 55vh;
+    background-color: rgba($color: #000, $alpha: .5);
+    color: $colorTitle;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
+    margin-top: 10vh;
 }
 
 .cart h1 {
@@ -124,12 +128,14 @@ a {
     margin: 0 8px;
     border-radius: 3rem;
     border: 1px solid $colorTitle;
-    background-color: rgba($color: $colorBackground2, $alpha: .5);
+    background-color: $colorBackground2;
     &:hover {
         transform: scale(1.1);
         transition: .5s;
         cursor: pointer;
         background-color: transparent;
+    }&:last-child{
+        background-color: red;
     }
 }
 
@@ -144,37 +150,36 @@ a {
 .buy {
     position: absolute;
     top: 0;
-    margin-top: 7vh;
+    margin-top: 9vh;
     background-color: rgba($color: $colorBackground2, $alpha: .8);
-    padding: 1.5rem 3rem;
+    padding: 1.3rem 3rem;
     border-radius: 15px;
 }
-.description {
-    position: absolute;
-    margin-top: 28vh;
-}
-#hamburger:hover ~ .description h2{
+#hamburger:hover ~ .description div{
     display: block;
 }
-#Chinese:hover ~ .description h2{
+#Chinese:hover ~ .description div{
     display: block;
 }
-#Sushi:hover ~ .description h2{
+#Sushi:hover ~ .description div{
     display: block;
 }
 
-.description h2{
-    font-size: 1.5rem;
+.description div{
+    font-size: 1rem;
     background-color: rgba($color: $colorBackground2, $alpha: .5);
-    padding: .5rem 3rem;
+    padding: .5rem 1rem; 
     border-radius: 10px;
-    margin-top: .5rem;  
-    display: none;  
+    position: absolute;
+    margin-top: 9vh;
+    text-align: center;
+    display: none;
 }
-.description span{
+.description p{
     background-color: $headerColor;
     padding: .3rem 1rem;
     border-radius: 10px;
+    font-size: 1.2rem;
 }
 .about{
     width: 100vw;
@@ -199,4 +204,37 @@ a {
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+
+@media(max-width:600px){
+    .imagePrev, .items{
+        width: 25vw;
+        height: 15vh;
+        margin: 1.5rem .5rem;
+    }
+    .imgFull{
+        width: 100vw;
+        height: 45vh;
+    }
+    .subProducts{
+        width: 100vw;
+    }
+    .description p, .description h2{
+        font-size: 1rem;
+    }
+    .description{
+        width: 32vw;
+        text-align: center;
+    }
+    .description h2{
+        margin-bottom:1vh ;
+    }
+    .description p{
+        padding: .3rem .5rem;
+    }
+    .buy{
+        font-size: .5rem;
+        margin-top: 10vh;
+    }
 }
